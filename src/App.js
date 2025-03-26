@@ -1,7 +1,8 @@
 import './App.css';
-import data, {categories} from './data';
-console.log(categories)
+import data, {categories, uniqueWords} from './data';
 console.log(data)
+console.log(categories)
+console.log("Unique Words:", uniqueWords)
 
 function App() {
   return (
