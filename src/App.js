@@ -1,14 +1,17 @@
 import './App.css';
-import data, { categories, uniqueWords, countProduct, nameCount } from './data';
-console.log(data);
-console.log(categories);
-console.log("Unique Words:", uniqueWords);
-console.log("Key Value pairs", countProduct);
-console.log("Names with count:", nameCount);
+import { uniqueWords } from './data';
+import CategoryButton from './CategoryButton';
 
 function App() {
   return (
     <div className="App">
+      <h1>Categories:</h1>
+      <div>
+        {uniqueWords.map((category) => (
+          <CategoryButton key={category} category={category} />
+        ))}
+        <CategoryButton key='all' category='All Categories' />
+      </div>
     </div>
   );
 }
