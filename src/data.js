@@ -7,5 +7,9 @@ export const countProduct = categories.reduce((acc, currentCount) => {
   return acc
 }, {});
 
+export const nameCount = uniqueWords.map((name) => ({
+  name: name,
+  count: countProduct[name]
+}));
 
 export default data;
