@@ -1,5 +1,18 @@
 .CategoryButton {
-  padding: '10px 20px'; 
-  margin: '5px';
-  border-radius: '5px';
+  border: 1px solid #184776;
+  border-radius: 20px;
+  padding: 5px;
+  background-color: #073147;
+  color: rgb(252, 252, 252);
+}
+
+.CategoryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 10px;
+  padding: 15px; 
+}
+
+.CategoryButton:hover {
+  transform: scale(1.05);
 }

@@ -1,3 +1,4 @@
+import './CategoryButton.css'
 
 function CategoryButton({ category }) {
   return (

@@ -6,12 +6,10 @@ import ProductCard from './Component/ProductCard/ProductCard';
 function App() {
   return (
     <div className="App">
-      <h1>Categories:</h1>
-      <div>
+      <div className='CategoryGrid'>
         {uniqueWords.map((category) => (
           <CategoryButton key={category} category={category} />
         ))}
-        <CategoryButton key='all' category='All Categories' />
       </div>
       <div className='ProductGrid'>
         {data.map((product) => {
