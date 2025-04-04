@@ -3,6 +3,7 @@ import { useState } from 'react';
 import data, { uniqueWords } from './data';
 import CategoryButton from './Component/CategoryButton/CategoryButton';
 import ProductCard from './Component/ProductCard/ProductCard';
+import TotalCount from './Component/TotalCount/TotalCount';
 
 function App() {
   const [selectedCategory, setSelectedCategory] = useState("All Categories");
@@ -23,6 +24,12 @@ function App() {
         ))}
         <CategoryButton key='all' category='All Categories' onSelect={handleCategorySelect} selectedCategory={selectedCategory} />
       </div>
+
+      <TotalCount 
+        categoryCount={uniqueWords.length}
+        productCount={filterProducts.length}
+      />
+
       <div className='ProductGrid'>
         {filterProducts.map((product) => {
           return <ProductCard key={product.id} product={product}/>
