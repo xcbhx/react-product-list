@@ -19,9 +19,9 @@ function App() {
     <div className="App">
       <div className='CategoryGrid'>
         {uniqueWords.map((category) => (
-          <CategoryButton key={category} category={category} onSelect={handleCategorySelect} />
+          <CategoryButton key={category} category={category} onSelect={handleCategorySelect} selectedCategory={selectedCategory} />
         ))}
-        <CategoryButton key='all' category='All Categories' onSelect={handleCategorySelect} />
+        <CategoryButton key='all' category='All Categories' onSelect={handleCategorySelect} selectedCategory={selectedCategory} />
       </div>
       <div className='ProductGrid'>
         {filterProducts.map((product) => {

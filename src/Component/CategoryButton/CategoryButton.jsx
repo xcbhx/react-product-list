@@ -1,9 +1,12 @@
 import './CategoryButton.css'
 
-function CategoryButton({ category, onSelect }) {
+function CategoryButton({ category, onSelect, selectedCategory }) {
+  const isActive = category === selectedCategory;
+
   return (
     <div>
-      <button className='CategoryButton' onClick={() => onSelect(category)}>
+      <button className={`CategoryButton ${isActive ? 'active' : ''}`} 
+        onClick={() => onSelect(category) }>
         {category}
       </button>
     </div>

@@ -2,6 +2,10 @@
   border-radius: 10px;
   background-color: #073147;
   color: rgb(252, 252, 252);
+  padding: 10px;
+  margin: 5px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
 .CategoryGrid {
@@ -13,4 +17,11 @@
 
 .CategoryButton:hover {
   transform: scale(1.05);
+}
+
+.CategoryButton.active {
+  background-color: #6b622fcd;
+  color: rgb(252, 252, 252);
+  border-color: #fafafa;
+  font-weight: bold;
 }
