@@ -1,9 +1,11 @@
 import './CategoryButton.css'
 
-function CategoryButton({ category }) {
+function CategoryButton({ category, onSelect }) {
   return (
-    <div className="CategoryButton">
-      {category}
+    <div>
+      <button className='CategoryButton' onClick={() => onSelect(category)}>
+        {category}
+      </button>
     </div>
   )
 };
