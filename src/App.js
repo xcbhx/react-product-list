@@ -5,6 +5,7 @@ import CategoryButton from './Component/CategoryButton/CategoryButton';
 import ProductCard from './Component/ProductCard/ProductCard';
 import TotalCount from './Component/TotalCount/TotalCount';
 import TotalUnits from './Component/TotalUnits/TotalUnits';
+import TotalInventory from './Component/TotalInventory/TotalInventory';
 
 function App() {
   const [selectedCategory, setSelectedCategory] = useState("All Categories");
@@ -18,6 +19,13 @@ function App() {
     : data.filter(product => product.category === selectedCategory);
 
   const totalUnits = filterProducts.reduce((sum, product) => sum + product.units, 0);
+  
+  const totalInventoryValue = filterProducts.reduce((sum, product) => {
+    const priceString = product.price.replace(/[^0-9.]/g, '');
+    const price = parseFloat(priceString) || 0;
+    const units = parseInt(product.units) || 0;
+    return sum + (price * units);
+  }, 0);
 
   return (
     <div className="App">
@@ -34,6 +42,7 @@ function App() {
       />
     
       <TotalUnits countUnits={totalUnits} />
+      <TotalInventory inventoryCount={totalInventoryValue} />
 
       <div className='ProductGrid'>
         {filterProducts.map((product) => {
