@@ -4,6 +4,7 @@ import data, { uniqueWords } from './data';
 import CategoryButton from './Component/CategoryButton/CategoryButton';
 import ProductCard from './Component/ProductCard/ProductCard';
 import TotalCount from './Component/TotalCount/TotalCount';
+import TotalUnits from './Component/TotalUnits/TotalUnits';
 
 function App() {
   const [selectedCategory, setSelectedCategory] = useState("All Categories");
@@ -16,6 +17,8 @@ function App() {
     ? data
     : data.filter(product => product.category === selectedCategory);
 
+  const totalUnits = filterProducts.reduce((sum, product) => product.units, 0);
+  
   return (
     <div className="App">
       <div className='CategoryGrid'>
@@ -29,6 +32,8 @@ function App() {
         categoryCount={uniqueWords.length}
         productCount={filterProducts.length}
       />
+    
+      <TotalUnits countUnits={totalUnits} />
 
       <div className='ProductGrid'>
         {filterProducts.map((product) => {
