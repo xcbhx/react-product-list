@@ -17,8 +17,8 @@ function App() {
     ? data
     : data.filter(product => product.category === selectedCategory);
 
-  const totalUnits = filterProducts.reduce((sum, product) => product.units, 0);
-  
+  const totalUnits = filterProducts.reduce((sum, product) => sum + product.units, 0);
+
   return (
     <div className="App">
       <div className='CategoryGrid'>
